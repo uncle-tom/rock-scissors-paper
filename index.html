@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<meta charset="utf-8">
 		<title>RSP game</title>
 		<link rel="stylesheet" href="index.css">
 	</head>
@@ -23,6 +24,13 @@
 			<div class="scissors"><img src="img/scissors.png" alt="" data-clk="computer-scissors"></div>
 			<div class="paper"><img src="img/paper.png" alt="" data-clk="computer-paper"></div>
 		</div>
+
+		<div class="button-reset" onclick="myFunction()">Reset</div>
+		<script>
+			function myFunction() {
+    		location.reload();
+			}
+		</script>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 		<script src="index.js"></script>

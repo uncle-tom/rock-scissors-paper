@@ -1,4 +1,4 @@
-var userChoice;
+var userChoiсe;
 var computerChoice = Math.random();
 if (computerChoice < 0.34) {
     computerChoice = "rock";
@@ -8,13 +8,12 @@ if (computerChoice < 0.34) {
     computerChoice = "scissors";
 } 
 
-$('.user img').click(function(){   
+$('.user img').click(function name(){   
     userChoiсe = $(this).data('clk');
-    $('.user img').animate({"opacity":"0"});
-    $('.user'+' '+'.'+userChoiсe+' '+'img').animate({"opacity":"0.99"});
-    console.log('.user'+' '+'.'+userChoiсe+' '+'img');
-    $('.computer img').animate({"opacity":"0"});
-    $('.computer'+' '+'.'+computerChoice+' '+'img').animate({"opacity":"0.99"},{complete:function(){
+    $('.user img').css({"display":"none"});
+    $('.user'+' '+'.'+userChoiсe+' '+'img').css({"display":"block"});
+    $('.computer img').css({"display":"none"});
+    $('.computer'+' '+'.'+computerChoice+' '+'img').css({"display":"block"}).animate({"display":"block"},{complete:function(){
         if(userChoiсe === computerChoice) {
             $('.tie').fadeIn();
         } 
@@ -42,5 +41,7 @@ $('.user img').click(function(){
                 $('.lose').fadeIn();
             }
         } 
+        $('.button-reset').fadeIn();
     }});
+
 });
