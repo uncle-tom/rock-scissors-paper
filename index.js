@@ -8,12 +8,13 @@ if (computerChoice < 0.34) {
     computerChoice = "scissors";
 } 
 
-$('.user h2').click(function(){   
+$('.user img').click(function(){   
     userChoiсe = $(this).data('clk');
-    $('.user h2').animate({"opacity":"0"});
-    $('.user'+' '+'.'+userChoiсe).animate({"opacity":"0.99"});
-    $('.computer h2').animate({"opacity":"0"});
-    $('.computer'+' '+'.'+computerChoice).animate({"opacity":"0.99"},{complete:function(){
+    $('.user img').animate({"opacity":"0"});
+    $('.user'+' '+'.'+userChoiсe+' '+'img').animate({"opacity":"0.99"});
+    console.log('.user'+' '+'.'+userChoiсe+' '+'img');
+    $('.computer img').animate({"opacity":"0"});
+    $('.computer'+' '+'.'+computerChoice+' '+'img').animate({"opacity":"0.99"},{complete:function(){
         if(userChoiсe === computerChoice) {
             $('.tie').fadeIn();
         } 
