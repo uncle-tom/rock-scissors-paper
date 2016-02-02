@@ -1,4 +1,4 @@
-var userChoiсe;
+var userChoice;
 var computerChoice = Math.random();
 if (computerChoice < 0.34) {
     computerChoice = "rock";
@@ -10,8 +10,10 @@ if (computerChoice < 0.34) {
 
 $('.user h2').click(function(){   
     userChoiсe = $(this).data('clk');
-    $('.user'+' '+'.'+userChoiсe).animate({"margin-left":"50px"});
-    $('.computer'+' '+'.'+computerChoice).animate({"padding-right":"50px"}, {complete:function(){
+    $('.user h2').animate({"opacity":"0"});
+    $('.user'+' '+'.'+userChoiсe).animate({"opacity":"0.99"});
+    $('.computer h2').animate({"opacity":"0"});
+    $('.computer'+' '+'.'+computerChoice).animate({"opacity":"0.99"},{complete:function(){
         if(userChoiсe === computerChoice) {
             $('.tie').fadeIn();
         } 
