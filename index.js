@@ -1,38 +1,48 @@
-var userChoice = prompt("Do you choose rock, paper or scissors?");
+var userChoiсe;
 var computerChoice = Math.random();
-if (computerChoice < 0.34) {
+    if (computerChoice < 0.34) {
     computerChoice = "rock";
-} else if(computerChoice <= 0.67) {
+    } else if(computerChoice <= 0.67) {
     computerChoice = "paper";
-} else {
+    } else {
     computerChoice = "scissors";
-} console.log("Computer: " + computerChoice);
+    } 
 
-var compare = function(choice1, choice2) {
-    if(choice1 === choice2) {
-        return 'The result is a tie!';
-    } else if (choice1 === "rock") {
-        if (choice2 === "scissors") {
-            return "you wins";
+$('.user h2').click(function(){
+    
+    console.log(computerChoice);
+    userChoiсe = $(this).data('clk');
+    console.log(userChoiсe);
+  $('.user'+' '+'.'+userChoiсe).animate({"margin-left":"50px"});
+  $('.computer'+' '+'.'+computerChoice).animate({"padding-right":"50px"}, {complete:function(){
+    if(userChoiсe === computerChoice) {
+        $('.tie').fadeIn();
+      } 
+      else if (userChoiсe === "rock") {
+        if (computerChoice === "scissors") {
+          $('.win').fadeIn();
+        }   
+        else {
+          $('.lose').fadeIn();   
+        }
+        }
+      else if (userChoiсe === "scissors") {
+        if (computerChoice === "paper") {
+          $('.win').fadeIn();
+        }   
+        else {
+                $('.lose').fadeIn();
+        }
+        } 
+        else if (userChoiсe === "paper") {
+        if (computerChoice === "rock") {
+          $('.win').fadeIn();
         }
         else {
-            return "you lose"    
+            $('.lose').fadeIn();
         }
-    } else if (choice1 === "paper") {
-        if (choice2 === "rock") {
-            return "you wins"
-        }
-        else {
-            return "you lose"
-        }
-    } else if (choice1 === "scissors") {
-        if (choice2 === "paper") {
-            return "you lose"
-        }
-        else {
-            return "you wins"
-        }
-    }
-};
-
-compare(userChoice,computerChoice);
+      } 
+  }});
+  
+    
+});
