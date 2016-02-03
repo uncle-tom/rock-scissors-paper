@@ -73,7 +73,18 @@ $('.user img').click(function name(){
                 $('.pc-res').text(pcRes);
                 setTimeout(reset, 1000);
             }
-        } 
-    }});
-    
+        }
+        console.log(userRes);
+        if (userRes > pcRes) {
+            $('.user-res').css({"color":"lightgreen"});
+            $('.pc-res').css({"color":"black"});
+        } else if(userRes < pcRes) {
+            $('.pc-res').css({"color":"red"});
+            $('.user-res').css({"color":"black"});
+        } else {
+            $('.user-res').css({"color":"black"});
+            $('.pc-res').css({"color":"black"});
+        }
+        ;
+    }});    
 });
